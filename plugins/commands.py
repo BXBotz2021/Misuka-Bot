@@ -42,6 +42,9 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
+            ],[
+            InlineKeyboardButton('Request Group', url='https://t.me/BlackX_market'),
+            InlineKeyboardButton('Contact Developer', url='https://t.me/gtxprime')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -83,7 +86,7 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
-            },[
+            ],[
             InlineKeyboardButton('Request Group', url='https://t.me/BlackX_market'),
             InlineKeyboardButton('Contact Developer', url='https://t.me/gtxprime')
         ]]
