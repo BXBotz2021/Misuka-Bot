@@ -71,7 +71,7 @@ async def next_page(bot, query):
 
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("Hello {first}, this is not requested by you if you want this you can request your own !", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -101,14 +101,14 @@ async def next_page(bot, query):
     else:
         btn = [
             [
-                InlineKeyboardButton(
+                [InlineKeyboardButton(
                     text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
-                ),
+                )][,
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}",
+                    text=f"{get_size("☝️" file.file_size) "☝️"}",
                     callback_data=f'files_#{file.file_id}',
                 ),
-            ]
+            ]]
             for file in files
         ]
 
