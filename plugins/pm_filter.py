@@ -564,7 +564,7 @@ async def auto_filter(client, message):
                 InlineKeyboardButton(
                    text=f"{file.file_name}",
                                      callback_data=f'files#{file.file_id}'
-                                    ),
+                                    )],[
                 InlineKeyboardButton(
                    text=f"☝ Size of this file ☝ = , {get_size(file.file_size)}",
                    callback_data=f'files_#{file.file_id}'),
