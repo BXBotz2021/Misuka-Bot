@@ -101,14 +101,10 @@ async def next_page(bot, query):
     else:
         btn = [
             [
-                [InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
-                )],[
-                InlineKeyboardButton(
-                    text=f"☝ Size of this file ☝ = , {get_size(file.file_size)}",
-                    callback_data=f'files_#{file.file_id}',
-                )
-            ]]
+                [InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'files#{file.file_id}')
+                ],[
+                InlineKeyboardButton(text=f"☝ Size of this file ☝ = , {get_size(file.file_size)}",callback_data=f'files_#{file.file_id}')
+                ]]
             for file in files
         ]
 
@@ -561,15 +557,10 @@ async def auto_filter(client, message):
         else:
             btn = [
                 [
-                    InlineKeyboardButton(
-                        text=f"{file.file_name}",
-                        callback_data=f'files#{file.file_id}',
-                    ),
-                    InlineKeyboardButton(
-                        text=f"{get_size(file.file_size)}",
-                        callback_data=f'files_#{file.file_id}',
-                    ),
-                ]
+                    [InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'files#{file.file_id}')
+                ],[
+                InlineKeyboardButton(text=f"☝ Size of this file ☝ = , {get_size(file.file_size)}",callback_data=f'files_#{file.file_id}')
+                ]]
                 for file in files
             ]
 
@@ -590,5 +581,5 @@ async def auto_filter(client, message):
         elif imdb:
             await message.reply_text(f"<b>Query: {search}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10", reply_markup=InlineKeyboardMarkup(btn))
         else:
-            await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ </b>", reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_text(f"<b>This is what I got for you {search} ‌‌‌‌‎ </b>", reply_markup=InlineKeyboardMarkup(btn))
         
